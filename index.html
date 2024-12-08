@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Ciências - Sistema Digestivo</title>
+    <script>
+        function calcularResultados() {
+            // Respostas corretas
+            const respostasCorretas = [
+                "b", "c", "b", "c", "b", "b", "a", "b", "b", "a",
+                "b", "a", "b", "b", "b", "b", "b", "c", "d", "a",
+                "b", "c", "a", "a", "a", "b", "b", "c", "c", "b"
+            ];
+
+            let acertos = 0;
+
+            // Verifica as respostas
+            for (let i = 1; i <= 30; i++) {
+                const respostaUsuario = document.querySelector(`input[name="q${i}"]:checked`);
+                if (respostaUsuario && respostaUsuario.value === respostasCorretas[i - 1]) {
+                    acertos++;
+                }
+            }
+
+            // Calcula a porcentagem
+            const porcentagem = (acertos / 30) * 100;
+
+            // Mostra os resultados
+            const resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = `
+                <h2>Resultados</h2>
+                <p>Acertos: ${acertos} de 30</p>
+                <p>Porcentagem: ${porcentagem.toFixed(2)}%</p>
+            `;
+        }
+    </script>
+</head>
+<body>
+    <h1>Teste de Ciências - Sistema Digestivo</h1>
+    <form id="teste">
+        <h2>Escolhe a opção correta para cada pergunta:</h2>
+
+ <label>1. O sistema digestivo humano é constituído por:</label><br>
+        <input type="radio" name="q1" value="a"> (A) Sistema respiratório e intestinos<br>
+        <input type="radio" name="q1" value="b"> (B) Tubo digestivo e glândulas anexas<br>
+        <input type="radio" name="q1" value="c"> (C) Glândulas salivares e pâncreas apenas<br>
+        <input type="radio" name="q1" value="d"> (D) Ossos e dentes<br><br>
+
+        <label>2. Qual é o órgão em forma de saco no sistema digestivo?</label><br>
+        <input type="radio" name="q2" value="a"> (A) Esófago<br>
+        <input type="radio" name="q2" value="b"> (B) Fígado<br>
+        <input type="radio" name="q2" value="c"> (C) Estômago<br>
+        <input type="radio" name="q2" value="d"> (D) Pâncreas<br><br>
+
+        <label>3. Os dentes molares têm a função de:</label><br>
+        <input type="radio" name="q3" value="a"> (A) Cortar e rasgar os alimentos<br>
+        <input type="radio" name="q3" value="b"> (B) Esmagar e triturar os alimentos<br>
+        <input type="radio" name="q3" value="c"> (C) Produzir saliva<br>
+        <input type="radio" name="q3" value="d"> (D) Mastigar apenas alimentos líquidos<br><br>
+
+        <label>4. A bílis é produzida pelo:</label><br>
+        <input type="radio" name="q4" value="a"> (A) Estômago<br>
+        <input type="radio" name="q4" value="b"> (B) Pâncreas<br>
+        <input type="radio" name="q4" value="c"> (C) Fígado<br>
+        <input type="radio" name="q4" value="d"> (D) Intestino delgado<br><br>
+
+        <label>5. A digestão dos glícidos começa:</label><br>
+        <input type="radio" name="q5" value="a"> (A) No estômago<br>
+        <input type="radio" name="q5" value="b"> (B) Na boca<br>
+        <input type="radio" name="q5" value="c"> (C) No intestino grosso<br>
+        <input type="radio" name="q5" value="d"> (D) No fígado<br><br>
+
+        <label>6. A saliva é responsável por iniciar a digestão de:</label><br>
+        <input type="radio" name="q6" value="a"> (A) Proteínas<br>
+        <input type="radio" name="q6" value="b"> (B) Glícidos<br>
+        <input type="radio" name="q6" value="c"> (C) Lípidos<br>
+        <input type="radio" name="q6" value="d"> (D) Vitaminas<br><br>
+
+        <label>7. O intestino grosso é responsável por:</label><br>
+        <input type="radio" name="q7" value="a"> (A) Absorver água e formar fezes<br>
+        <input type="radio" name="q7" value="b"> (B) Produzir saliva<br>
+        <input type="radio" name="q7" value="c"> (C) Realizar a digestão de proteínas<br>
+        <input type="radio" name="q7" value="d"> (D) Produzir suco gástrico<br><br>
+
+        <label>8. Qual é a função principal dos dentes caninos?</label><br>
+        <input type="radio" name="q8" value="a"> (A) Cortar os alimentos<br>
+        <input type="radio" name="q8" value="b"> (B) Rasgar os alimentos<br>
+        <input type="radio" name="q8" value="c"> (C) Esmagar os alimentos<br>
+        <input type="radio" name="q8" value="d"> (D) Produzir saliva<br><br>
+
+        <label>9. No intestino delgado ocorre:</label><br>
+        <input type="radio" name="q9" value="a"> (A) Apenas a digestão de proteínas<br>
+        <input type="radio" name="q9" value="b"> (B) Digestão e absorção de nutrientes<br>
+        <input type="radio" name="q9" value="c"> (C) Apenas absorção de nutrientes<br>
+        <input type="radio" name="q9" value="d"> (D) Formação de fezes<br><br>
+
+        <label>10. A mastigação é considerada uma transformação:</label><br>
+        <input type="radio" name="q10" value="a"> (A) Física<br>
+        <input type="radio" name="q10" value="b"> (B) Química<br>
+        <input type="radio" name="q10" value="c"> (C) Enzimática<br>
+        <input type="radio" name="q10" value="d"> (D) Nenhuma das anteriores<br><br>
+
+        <!-- Perguntas 11 a 20 -->
+        <label>11. Qual é o papel do suco gástrico no estômago?</label><br>
+        <input type="radio" name="q11" value="a"> (A) Produzir saliva<br>
+        <input type="radio" name="q11" value="b"> (B) Digirir proteínas<br>
+        <input type="radio" name="q11" value="c"> (C) Produzir bílis<br>
+        <input type="radio" name="q11" value="d"> (D) Digirir glícidos<br><br>
+
+        <label>12. O bolo alimentar é formado na:</label><br>
+        <input type="radio" name="q12" value="a"> (A) Boca<br>
+        <input type="radio" name="q12" value="b"> (B) Faringe<br>
+        <input type="radio" name="q12" value="c"> (C) Estômago<br>
+        <input type="radio" name="q12" value="d"> (D) Intestino grosso<br><br>
+
+        <label>13. As vilosidades intestinais são importantes porque:</label><br>
+        <input type="radio" name="q13" value="a"> (A) Produzem suco intestinal<br>
+        <input type="radio" name="q13" value="b"> (B) Absorvem nutrientes<br>
+        <input type="radio" name="q13" value="c"> (C) Realizam a digestão<br>
+        <input type="radio" name="q13" value="d"> (D) Produzem bílis<br><br>
+
+        <label>14. A bílis tem como função:</label><br>
+        <input type="radio" name="q14" value="a"> (A) Digirir proteínas<br>
+        <input type="radio" name="q14" value="b"> (B) Dividir os lípidos<br>
+        <input type="radio" name="q14" value="c"> (C) Absorver nutrientes<br>
+        <input type="radio" name="q14" value="d"> (D) Produzir saliva<br><br>
+
+        <label>15. No estômago, os alimentos são transformados em:</label><br>
+        <input type="radio" name="q15" value="a"> (A) Fezes<br>
+        <input type="radio" name="q15" value="b"> (B) Quimo<br>
+        <input type="radio" name="q15" value="c"> (C) Bolo alimentar<br>
+        <input type="radio" name="q15" value="d"> (D) Lípidos<br><br>
+
+        <label>16. Qual é o comprimento aproximado do intestino delgado?</label><br>
+        <input type="radio" name="q16" value="a"> (A) 2 metros<br>
+        <input type="radio" name="q16" value="b"> (B) 6 metros<br>
+        <input type="radio" name="q16" value="c"> (C) 10 metros<br>
+        <input type="radio" name="q16" value="d"> (D) 12 metros<br><br>
+
+        <label>17. Qual das opções é um exemplo de transformação química na digestão?</label><br>
+        <input type="radio" name="q17" value="a"> (A) Mastigação<br>
+        <input type="radio" name="q17" value="b"> (B) Ação do suco gástrico<br>
+        <input type="radio" name="q17" value="c"> (C) Movimentos do intestino<br>
+        <input type="radio" name="q17" value="d"> (D) Deglutição<br><br>
+
+        <label>18. O órgão responsável por armazenar a bílis é:</label><br>
+        <input type="radio" name="q18" value="a"> (A) Fígado<br>
+        <input type="radio" name="q18" value="b"> (B) Pâncreas<br>
+        <input type="radio" name="q18" value="c"> (C) Vesícula biliar<br>
+        <input type="radio" name="q18" value="d"> (D) Estômago<br><br>
+
+        <label>19. O que ocorre no intestino grosso?</label><br>
+        <input type="radio" name="q19" value="a"> (A) Absorção de água<br>
+        <input type="radio" name="q19" value="b"> (B) Formação de fezes<br>
+        <input type="radio" name="q19" value="c"> (C) Ação da microbiota intestinal<br>
+        <input type="radio" name="q19" value="d"> (D) Todas as anteriores<br><br>
+
+        <label>20. O suco pancreático atua na digestão de:</label><br>
+        <input type="radio" name="q20" value="a"> (A) Proteínas, lípidos e glícidos<br>
+        <input type="radio" name="q20" value="b"> (B) Apenas proteínas<br>
+        <input type="radio" name="q20" value="c"> (C) Apenas lípidos<br>
+        <input type="radio" name="q20" value="d"> (D) Apenas glícidos<br><br>
+
+        <label>21. Qual é o principal papel do pâncreas no sistema digestivo?</label><br>
+        <input type="radio" name="q21" value="a"> (A) Produzir bílis<br>
+        <input type="radio" name="q21" value="b"> (B) Produzir suco pancreático<br>
+        <input type="radio" name="q21" value="c"> (C) Produzir saliva<br>
+        <input type="radio" name="q21" value="d"> (D) Produzir suco gástrico<br><br>
+
+        <label>22. No estômago, inicia-se a digestão de:</label><br>
+        <input type="radio" name="q22" value="a"> (A) Glícidos<br>
+        <input type="radio" name="q22" value="b"> (B) Lípidos<br>
+        <input type="radio" name="q22" value="c"> (C) Proteínas<br>
+        <input type="radio" name="q22" value="d"> (D) Vitaminas<br><br>
+
+        <label>23. O que são glândulas anexas do sistema digestivo?</label><br>
+        <input type="radio" name="q23" value="a"> (A) Glândulas salivares, fígado e pâncreas<br>
+        <input type="radio" name="q23" value="b"> (B) Glândulas do intestino<br>
+        <input type="radio" name="q23" value="c"> (C) Vesícula biliar e fígado<br>
+        <input type="radio" name="q23" value="d"> (D) Nenhuma das anteriores<br><br>
+
+        <label>24. A deglutição ocorre na:</label><br>
+        <input type="radio" name="q24" value="a"> (A) Faringe<br>
+        <input type="radio" name="q24" value="b"> (B) Boca<br>
+        <input type="radio" name="q24" value="c"> (C) Esófago<br>
+        <input type="radio" name="q24" value="d"> (D) Estômago<br><br>
+
+        <label>25. Qual é o comprimento aproximado do intestino grosso?</label><br>
+        <input type="radio" name="q25" value="a"> (A) 1,5 metros<br>
+        <input type="radio" name="q25" value="b"> (B) 6 metros<br>
+        <input type="radio" name="q25" value="c"> (C) 3 metros<br>
+        <input type="radio" name="q25" value="d"> (D) 5 metros<br><br>
+
+        <label>26. As fezes são formadas no:</label><br>
+        <input type="radio" name="q26" value="a"> (A) Estômago<br>
+        <input type="radio" name="q26" value="b"> (B) Intestino grosso<br>
+        <input type="radio" name="q26" value="c"> (C) Intestino delgado<br>
+        <input type="radio" name="q26" value="d"> (D) Esófago<br><br>
+
+        <label>27. Qual é a função principal do estômago?</label><br>
+        <input type="radio" name="q27" value="a"> (A) Mastigar os alimentos<br>
+        <input type="radio" name="q27" value="b"> (B) Armazenar alimentos e iniciar digestão de proteínas<br>
+        <input type="radio" name="q27" value="c"> (C) Absorver nutrientes<br>
+        <input type="radio" name="q27" value="d"> (D) Produzir bílis<br><br>
+
+        <label>28. O intestino delgado é dividido em três partes. Qual delas é a última?</label><br>
+        <input type="radio" name="q28" value="a"> (A) Duodeno<br>
+        <input type="radio" name="q28" value="b"> (B) Jejuno<br>
+        <input type="radio" name="q28" value="c"> (C) Íleo<br>
+        <input type="radio" name="q28" value="d"> (D) Esófago<br><br>
+
+        <label>29. O que é o quilo no processo digestivo?</label><br>
+        <input type="radio" name="q29" value="a"> (A) Produto da digestão de proteínas<br>
+        <input type="radio" name="q29" value="b"> (B) Produto da digestão de lípidos<br>
+        <input type="radio" name="q29" value="c"> (C) Produto da digestão no intestino delgado<br>
+        <input type="radio" name="q29" value="d"> (D) Substância do fígado<br><br>
+
+        <label>30. Qual destes comportamentos promove o bom funcionamento do sistema digestivo?</label><br>
+        <input type="radio" name="q30" value="a"> (A) Comer rápido<br>
+        <input type="radio" name="q30" value="b"> (B) Mastigar bem os alimentos<br>
+        <input type="radio" name="q30" value="c"> (C) Beber pouca água<br>
+        <input type="radio" name="q30" value="d"> (D) Evitar frutas<br><br>
+        <button type="button" onclick="calcularResultados()">Enviar Respostas</button>
+    </form>
+
+    <div id="resultado"></div>
+</body>
+</html>
